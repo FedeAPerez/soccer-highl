@@ -1,3 +1,7 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
 .matchs {
     display: grid;
     grid-template-columns: auto auto auto;
@@ -10,4 +14,14 @@
     max-width: 400px;
     margin: 1rem;
     border-radius: 4px;
+}
+
+.match-sides {
+    font-weight: 400;
+}
+
+.match-competition {
+    margin: 0rem auto;
+    font-weight: 400;
+    bottom: 0;
 }
