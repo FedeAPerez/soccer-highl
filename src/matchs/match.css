@@ -1,0 +1,70 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.matchs {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.match {
+    display: block;
+    box-shadow: 0px 4px 6px 0px hsla(0, 0%, 0%, 0.2);
+    padding: 1rem;
+    max-width: 400px;
+    margin: 1rem;
+    border-radius: 4px;
+}
+
+.match-sides {
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 0rem;
+}
+
+.match-competition {
+    margin: 0rem auto;
+    font-weight: 400;
+    bottom: 0;
+}
+
+button {
+    all: unset;
+    padding: 1rem;
+    border-radius: 4px;
+    background-color: #8387d0;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    color: white;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: #8588ca;
+}
+
+button:active {
+    background-color: #5156a0;
+}
+
+.match-error-fetching {
+    width: 70%;
+    margin: 0rem auto;
+    box-shadow: 0 4px 6px 0px hsla(0, 0%, 0%, 0.2);
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 4px;
+}
+
+.match-error-fetching h1 {    
+    font-weight: 400;
+    font-size: 24px;
+}
+
+.match-error-fetching h2 {
+    font-weight: 600;
+    font-size: 12px;
+}

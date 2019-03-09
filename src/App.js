@@ -1,52 +1,31 @@
-import React, { Component } from 'react';
-import { SoccerApi } from './models/soccer-api';
-import './match.css';
+import React from 'react';
+import Leagues from './available-leagues';
+import './base.css';
 
-const getCompetitionName = str => str.split(':')[1].trim();
+const getMessageHtml = (element) => {
+  return { __html: element };
+}
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+const Emoji  = ({ children, ...props }) => (
+  <span
+      dangerouslySetInnerHTML= { getMessageHtml(children) }>
+  </span>
+);
 
-    };
-  }
 
-  async componentDidMount() {
-    let socApi = new SoccerApi();
-    let socApiVids = await socApi.getVideos();
-    console.table(socApiVids);
-    //let Partido = socApiVids[0];
-    //console.table(Partido);
-    //console.table(Partido.side1)
-    //console.table(Partido.side2);
-    //console.table(Partido.competition)
-    this.setState((state, props) => {
-      return {
-        matchs: socApiVids
-      };
-    });
-  }
-
-  render() {
+const App = ({ children, ...props }) => {
     return (
-      <div className="matchs">
-        {
-          this.state.matchs && this.state.matchs.length > 0 &&
-          this.state.matchs.map((elem, index) => {
-            return (
-            <section className="match" key={"match-"+index}>
-              <h4 className="match-sides" key={'match-sides-'+index}>{elem.side1.name} - {elem.side2.name}</h4>
-              <h3 className="match-competition" key={'match-competition-'+index}>
-                {getCompetitionName(elem.competition.name)}
-              </h3>
-            </section>
-            );
-          })
-        }
-      </div>
+      <section>
+        <header>
+          <h1>Futbolín |</h1> 
+          <h2> Los últimos partidos, están acá. <Emoji>&#x26BD</Emoji></h2>
+        </header>
+        <Leagues />
+        <footer>
+            Con los aportes de ScoreBat.
+        </footer>
+      </section>
     );
-  }
 }
 
 export default App;
