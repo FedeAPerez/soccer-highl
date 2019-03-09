@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { SoccerApi } from '../models/soccer-api';
+import { SoccerAPI } from '../models/soccer-api';
 import League from './League';
 
 const getGroupBy = (objectArray, property, secondProperty) => {
@@ -28,7 +28,7 @@ const AvailableLeagues = () => {
     const [leagues, setLeagues] = useState(null);
 
     useEffect(() => {
-        new SoccerApi().getVideos().then(res => setLeagues(getLeagues(res)));
+        SoccerAPI.getVideos().then(res => setLeagues(getLeagues(res)));
     }, []);
 
     return (
