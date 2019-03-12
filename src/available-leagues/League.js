@@ -4,12 +4,12 @@ const getLeagueName = league => league.split(':')[1];
 const getLeagueCountry = league => league.split(':')[0];
 const getSides = match => `${match.side1.name} - ${match.side2.name}` 
 
-const MatchsBasic = ({ children, ...props }) => {
+const MatchsBasic = ({ matchs }) => {
     return (
         <ul>
             {
-                props.matchs &&
-                props.matchs.map((elem, index) => {
+                matchs &&
+                matchs.map((elem, index) => {
                     return <li key={"match-"+index} className="match">{getSides(elem)}</li>
                 })
             }
@@ -17,17 +17,17 @@ const MatchsBasic = ({ children, ...props }) => {
     );
 }
 
-const League = ({ children, ...props}) => {
+const League = ({ matchs, league }) => {
     return (
         <section className="league-card">
             <h3>
-                {getLeagueCountry(props.league)}
+                {getLeagueCountry(league)}
             </h3>
             <h2>
-                {getLeagueName(props.league)}
+                {getLeagueName(league)}
             </h2>
             <h4>
-                {`${props.matchs.length} partidos`}
+                {`${matchs.length} partidos`}
             </h4>
             <button>Ver</button>
         </section>
