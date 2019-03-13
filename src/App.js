@@ -1,5 +1,5 @@
 import React from 'react';
-import Leagues from './available-leagues';
+import Matchs from './matchs';
 import './base.css';
 
 const getMessageHtml = (element) => {
@@ -20,7 +20,7 @@ const App = ({ children, ...props }) => {
           <h1>Futbolín |</h1> 
           <h2> Los últimos partidos, están acá. <Emoji>&#x26BD</Emoji></h2>
         </header>
-        <Leagues />
+        <Matchs />
         <footer>
             Con los aportes de ScoreBat.
         </footer>
