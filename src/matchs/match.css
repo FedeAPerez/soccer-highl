@@ -1,28 +1,28 @@
 * {
-    font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
-.matchs {
-    display: grid;
-    grid-template-columns: auto auto auto;
+.ui-futbolin__matchs {
+  display: grid;
+  grid-template-columns: auto auto auto;
 }
 
-.match {
-    display: block;
-    padding: 1rem;
-    max-width: 300px;
-    margin: 1rem;
-    border-radius: 4px;
+.ui-futbolin__matchs__match {
+  display: block;
+  padding: 1rem;
+  max-width: 300px;
+  margin: 1rem;
+  border-radius: 4px;
 }
 
-.match-sides {
-    font-weight: 600;
-    font-size: 16px;
-    margin-top: 0rem;
+.ui-futbolin__matchs__match__sides {
+  font-weight: 600;
+  font-size: 16px;
+  margin-top: 0rem;
 }
 
-.match-competition {
-    margin: 0rem auto;
-    font-weight: 400;
-    bottom: 0;
+.ui-futbolin__matchs__match__competition {
+  margin: 0rem auto;
+  font-weight: 400;
+  bottom: 0;
 }
