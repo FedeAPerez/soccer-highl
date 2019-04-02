@@ -21,31 +21,33 @@ const Matchs = () => {
   return (
     <div className={namespace}>
       {matchs.length > 0 &&
-        matchs.map((elem, index) => {
+        matchs.map((match, index) => {
+          const { competition, thumbnail } = match;
           return (
             <section className={`${namespace}__match`} key={"match-" + index}>
               <img
                 alt={`match-tumbnail`}
-                src={elem.thumbnail}
+                src={thumbnail}
                 style={{
                   width: "200px",
                   height: "150px",
                   display: "block",
-                  margin: "1rem auto"
+                  margin: "1rem auto",
+                  marginLeft: 'unset'
                 }}
               />
               <h3
                 className={`${namespace}__match__sides`}
                 key={"match-sides-" + index}
               >
-                {getSidesName(elem)}
+                {getSidesName(match)}
               </h3>
 
               <h4
                 className={`${namespace}__match__competition`}
                 key={"match-competition-" + index}
               >
-                {getCompetitionName(elem.competition)}
+                {getCompetitionName(competition)}
               </h4>
             </section>
           );
