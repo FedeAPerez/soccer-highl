@@ -6,7 +6,11 @@ const namespace = "fut-leagues";
 
 const Match = ({ title, thumbnail }) => (
   <section className={`${namespace}__matchs__match`}>
-    <img className={`${namespace}__matchs__match__thumbnail`} src={thumbnail} />
+    <img
+      className={`${namespace}__matchs__match__thumbnail`}
+      src={thumbnail}
+      alt={`fut-leagues-img`}
+    />
     <footer>
       <h1>{title}</h1>
     </footer>
