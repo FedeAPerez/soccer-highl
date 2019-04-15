@@ -1,0 +1,32 @@
+.fut-leagues {
+  display: block;
+  padding: 1rem;
+}
+
+.fut-leagues__league__country {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 2rem;
+}
+
+.fut-leagues__league__competition {
+  color: grey;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+.fut-leagues__matchs {
+  display: flex;
+  width: fit-content;
+}
+
+.fut-leagues__matchs__match {
+  margin-right: 2rem;
+  max-width: 250px;
+  width: 250px;
+}
+
+.fut-leagues__matchs__match__thumbnail {
+  width: 100%;
+}

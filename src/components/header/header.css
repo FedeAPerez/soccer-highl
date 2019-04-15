@@ -1,0 +1,20 @@
+.fut-header {
+  background-color: #e74c3c;
+  border-bottom: 3px solid black;
+  padding: 1rem;
+  color: white;
+}
+
+.fut-header h1,
+h2 {
+  display: inline-block;
+}
+
+.fut-header h1 {
+  font-weight: 400;
+}
+
+.fut-header h2 {
+  font-weight: 600;
+  font-size: 16px;
+}

@@ -1,47 +1,21 @@
 * {
-    -webkit-font-smoothing: antialiased;
-    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
 }
 
 html {
-    height: 100vh;
+  height: 100vh;
 }
 body {
-    min-height: 100vh;
-    margin: 0rem;
-    padding: 0rem;
+  min-height: 100vh;
+  margin: 0rem;
+  padding: 0rem;
 }
 
-h1, h2, h3, h4, h5 {
-    margin: 0rem auto;
-}
-
-
-
-header {
-    background-color: #e74c3c;
-    border-bottom: 3px solid black;
-    padding: 1rem;
-    color: white;
-}
-
-header h1, h2 {
-    display: inline-block;
-}
-
-header h1 {
-    font-weight: 400;
-}
-
-header h2 {
-    font-weight: 600;
-    font-size: 16px;
-}
-
-footer {
-    background-color: #ecf0f1;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0rem auto;
 }

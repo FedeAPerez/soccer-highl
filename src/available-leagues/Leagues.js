@@ -1,23 +1,51 @@
-import React  from 'react';
-import League from './League';
-import { useSoccerVideosByLeague, useSoccerVideos } from '../hooks/soccer-hooks';
+import React from "react";
+import { arrayOf, string } from "prop-types";
+import "./leagues.css";
 
-const AvailableLeagues = () => {
-    const leagues = useSoccerVideosByLeague();
-    const allMatchs = useSoccerVideos();
-    console.table(allMatchs);
+const namespace = "fut-leagues";
 
-    return (
-        <section>
-            <section className="leagues-grid">
-                {
-                    leagues.length > 0 &&
-                    leagues.map(elem => <League {...elem} />)
-                }
-            </section>
-            <h1>Estos son nuestros partidos</h1>
-        </section>
-    );
-}
+const Match = ({ title, thumbnail }) => (
+  <section className={`${namespace}__matchs__match`}>
+    <img className={`${namespace}__matchs__match__thumbnail`} src={thumbnail} />
+    <footer>
+      <h1>{title}</h1>
+    </footer>
+  </section>
+);
 
-export default AvailableLeagues;
+const League = ({ id, leagueCountry, leagueCompetition, matchs }) => (
+  <article key={`fut-leagues-${id}`}>
+    <header>
+      <span className={`${namespace}__league__country`}>{leagueCountry}</span>
+      <span className={`${namespace}__league__competition`}>
+        {leagueCompetition}
+      </span>
+    </header>
+    <main className={`${namespace}__matchs`}>
+      {matchs.map(match => (
+        <Match key={`fut-leagues-${id}-matchs-${match.title}`} {...match} />
+      ))}
+    </main>
+  </article>
+);
+
+League.propTypes = {
+  id: string,
+  leagueCountry: string,
+  leagueCompetition: string,
+  matchs: arrayOf(Match)
+};
+
+const Leagues = ({ leagues }) => (
+  <section className={namespace}>
+    {leagues.map(league => (
+      <League {...league} />
+    ))}
+  </section>
+);
+
+Leagues.propTypes = {
+  leagues: arrayOf(League)
+};
+
+export default Leagues;
