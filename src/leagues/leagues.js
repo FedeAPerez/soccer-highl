@@ -1,49 +1,32 @@
 import React from "react";
 import { arrayOf, string } from "prop-types";
-import "./leagues.css";
+import Matchs from "../matchs";
+import "./leagues.scss";
 
 const namespace = "fut-leagues";
 
-const Match = ({ title, thumbnail }) => (
-  <section className={`${namespace}__matchs__match`}>
-    <img
-      className={`${namespace}__matchs__match__thumbnail`}
-      src={thumbnail}
-      alt={`fut-leagues-img`}
-    />
-    <footer>
-      <h1>{title}</h1>
-    </footer>
-  </section>
-);
-
-const League = ({ id, leagueCountry, leagueCompetition, matchs }) => (
-  <article key={`fut-leagues-${id}`}>
+const League = ({ leagueCountry, leagueCompetition, matchs }) => (
+  <article>
     <header>
       <span className={`${namespace}__league__country`}>{leagueCountry}</span>
       <span className={`${namespace}__league__competition`}>
         {leagueCompetition}
       </span>
     </header>
-    <main className={`${namespace}__matchs`}>
-      {matchs.map(match => (
-        <Match key={`fut-leagues-${id}-matchs-${match.title}`} {...match} />
-      ))}
-    </main>
+    <Matchs matchs={matchs} />
   </article>
 );
 
 League.propTypes = {
   id: string,
   leagueCountry: string,
-  leagueCompetition: string,
-  matchs: arrayOf(Match)
+  leagueCompetition: string
 };
 
 const Leagues = ({ leagues }) => (
   <section className={namespace}>
     {leagues.map(league => (
-      <League {...league} />
+      <League key={`fut-leagues-${league.id}`} {...league} />
     ))}
   </section>
 );

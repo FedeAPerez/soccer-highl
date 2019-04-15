@@ -7,15 +7,15 @@ const getLeagueCompetition = name => name.split(":")[1];
 
 const enhance = () => {
   const leagues = useSoccerVideosByLeague();
-  if (leagues) {
-    console.table(leagues);
-
-    const propsLeagues = leagues.map(league => ({
-      id: league.league,
-      leagueCountry: getLeagueCountry(league.leagueName),
-      leagueCompetition: getLeagueCompetition(league.leagueName),
-      matchs: league.matchs
-    }));
+  if (leagues && leagues.length > 0) {
+    const propsLeagues =
+      leagues &&
+      leagues.map(league => ({
+        id: league.league,
+        leagueCountry: getLeagueCountry(league.leagueName),
+        leagueCompetition: getLeagueCompetition(league.leagueName),
+        matchs: league.matchs
+      }));
 
     return <Leagues leagues={propsLeagues} />;
   } else {

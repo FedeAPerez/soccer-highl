@@ -25,8 +25,18 @@
   margin-right: 2rem;
   max-width: 250px;
   width: 250px;
-}
 
-.fut-leagues__matchs__match__thumbnail {
-  width: 100%;
+  &__thumbnail {
+    background: #e0dbdb;
+    border-radius: 4px;
+    height: 131.25px;
+    width: 250px;
+  }
+
+  &__placeholder {
+    background: #e0dbdb;
+    border-radius: 4px;
+    height: 131.25px;
+    width: 250px;
+  }
 }
