@@ -1,5 +1,5 @@
 import React from "react";
-import Leagues from "../../available-leagues/leagues";
+import Leagues from "../../leagues/leagues";
 import { useSoccerVideosByLeague } from "../../hooks/soccer-hooks";
 
 const getLeagueCountry = name => name.split(":")[0];

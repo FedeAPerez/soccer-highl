@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { SoccerAPI } from "../models/soccer-api";
+import { SoccerAPI } from "../api/soccer-api";
 
 const getGroupBy = (objectArray, property, secondProperty) => {
   return objectArray.reduce(function(acc, obj) {
