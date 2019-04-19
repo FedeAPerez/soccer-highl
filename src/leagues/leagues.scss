@@ -1,42 +1,57 @@
 .fut-leagues {
   display: block;
   padding: 1rem;
+  max-width: 75%;
+  margin: 0rem auto;
 }
 
-.fut-leagues__league__country {
-  font-size: 1rem;
-  font-weight: 600;
-  line-height: 2rem;
-}
+.fut-leagues__league {
+  &::after {
+    content: "";
+    border-bottom: 1px solid #cfd8dc;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 1px;
+    display: block;
+    width: 100%;
+  }
 
-.fut-leagues__league__competition {
-  color: grey;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.3;
+  &__country {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 2rem;
+  }
+
+  &__competition {
+    color: grey;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.3;
+  }
 }
 
 .fut-leagues__matchs {
   display: flex;
   width: fit-content;
-}
+  max-width: 100%;
 
-.fut-leagues__matchs__match {
-  margin-right: 2rem;
-  max-width: 250px;
-  width: 250px;
-
-  &__thumbnail {
-    background: #e0dbdb;
-    border-radius: 4px;
-    height: 131.25px;
+  &__match {
+    margin-right: 2rem;
+    max-width: 250px;
     width: 250px;
-  }
 
-  &__placeholder {
-    background: #e0dbdb;
-    border-radius: 4px;
-    height: 131.25px;
-    width: 250px;
+    &__thumbnail {
+      background: #e0dbdb;
+      border-radius: 4px;
+      height: 131.25px;
+      width: 250px;
+    }
+
+    &__placeholder {
+      background: #e0dbdb;
+      border-radius: 4px;
+      height: 131.25px;
+      width: 250px;
+    }
   }
 }
