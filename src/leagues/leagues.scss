@@ -5,6 +5,15 @@
   margin: 0rem auto;
 }
 
+.fut-leagues__tag {
+  margin-left: 6px;
+  padding: 0.4rem;
+  border-radius: 4px;
+  background-color: #ffcdd2;
+  color: #b71c1c;
+  vertical-align: middle;
+}
+
 .fut-leagues__league {
   &::after {
     content: "";

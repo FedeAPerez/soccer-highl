@@ -5,6 +5,16 @@ import "./leagues.scss";
 
 const namespace = "fut-leagues";
 
+const Tag = ({ length }) => {
+  const shouldTagLeague = length > 3;
+
+  if (shouldTagLeague) {
+    return <span className={`${namespace}__tag`}>{`${length} Partidos`}</span>;
+  } else {
+    return null;
+  }
+};
+
 const League = ({ id, leagueCountry, leagueCompetition, matchs }) => (
   <article className={`${namespace}__league`}>
     <header>
@@ -12,6 +22,7 @@ const League = ({ id, leagueCountry, leagueCompetition, matchs }) => (
       <span className={`${namespace}__league__competition`}>
         {leagueCompetition}
       </span>
+      <Tag length={matchs.length} />
     </header>
     <Matchs matchs={matchs} id={id} />
   </article>
