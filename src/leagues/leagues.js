@@ -1,15 +1,26 @@
 import React from "react";
 import { arrayOf, string } from "prop-types";
+import Tag from "../components/tag";
 import Matchs from "../matchs";
 import "./leagues.scss";
 
 const namespace = "fut-leagues";
 
-const Tag = ({ length }) => {
+const TagMatchs = ({ length }) => {
   const shouldTagLeague = length > 3;
 
   if (shouldTagLeague) {
-    return <span className={`${namespace}__tag`}>{`${length} Partidos`}</span>;
+    return <Tag>{`${length} Partidos`}</Tag>;
+  } else {
+    return null;
+  }
+};
+
+const TagLeague = ({ competition }) => {
+  const shouldTagCompetition = ["Ligue 1"].includes(competition);
+
+  if (shouldTagCompetition) {
+    return <Tag modifier={"green"}>Más vistos</Tag>;
   } else {
     return null;
   }
@@ -22,7 +33,8 @@ const League = ({ id, leagueCountry, leagueCompetition, matchs }) => (
       <span className={`${namespace}__league__competition`}>
         {leagueCompetition}
       </span>
-      <Tag length={matchs.length} />
+      <TagMatchs length={matchs.length} />
+      <TagLeague competition={leagueCompetition} />
     </header>
     <Matchs matchs={matchs} id={id} />
   </article>

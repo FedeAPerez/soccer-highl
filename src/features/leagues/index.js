@@ -3,7 +3,7 @@ import Leagues from "../../leagues/leagues";
 import { useSoccerVideosByLeague } from "../../hooks/soccer-hooks";
 
 const getLeagueCountry = name => name.split(":")[0];
-const getLeagueCompetition = name => name.split(":")[1];
+const getLeagueCompetition = name => String(name.split(":")[1]).trim();
 
 const enhance = () => {
   const leagues = useSoccerVideosByLeague();
