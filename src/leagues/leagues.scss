@@ -9,7 +9,6 @@
   &::after {
     content: "";
     border-bottom: 1px solid #cfd8dc;
-    margin-top: 20px;
     margin-bottom: 20px;
     height: 1px;
     display: block;
@@ -44,6 +43,7 @@
     margin-right: 2rem;
     max-width: 238px;
     width: 250px;
+    margin-bottom: 20px;
 
     &__thumbnail {
       background: #e0dbdb;
