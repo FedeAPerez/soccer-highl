@@ -16,6 +16,10 @@
     width: 100%;
   }
 
+  header {
+    margin-bottom: 1rem;
+  }
+
   &__country {
     font-size: 1rem;
     font-weight: 600;
@@ -33,25 +37,26 @@
 .fut-leagues__matchs {
   display: flex;
   width: fit-content;
+  flex-wrap: wrap;
   max-width: 100%;
 
   &__match {
     margin-right: 2rem;
-    max-width: 250px;
+    max-width: 238px;
     width: 250px;
 
     &__thumbnail {
       background: #e0dbdb;
       border-radius: 4px;
       height: 131.25px;
-      width: 250px;
+      width: 100%;
     }
 
     &__placeholder {
       background: #e0dbdb;
       border-radius: 4px;
       height: 131.25px;
-      width: 250px;
+      width: 100%;
     }
   }
 }

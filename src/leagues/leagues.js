@@ -5,7 +5,7 @@ import "./leagues.scss";
 
 const namespace = "fut-leagues";
 
-const League = ({ leagueCountry, leagueCompetition, matchs }) => (
+const League = ({ id, leagueCountry, leagueCompetition, matchs }) => (
   <article className={`${namespace}__league`}>
     <header>
       <span className={`${namespace}__league__country`}>{leagueCountry}</span>
@@ -13,7 +13,7 @@ const League = ({ leagueCountry, leagueCompetition, matchs }) => (
         {leagueCompetition}
       </span>
     </header>
-    <Matchs matchs={matchs} />
+    <Matchs matchs={matchs} id={id} />
   </article>
 );
 

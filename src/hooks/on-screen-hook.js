@@ -10,7 +10,6 @@ const onScreenHook = () => {
   const [visible, setVisible] = useState(false);
 
   const setIntersectionObserver = useEffect(() => {
-    console.log("es visible " + ref.current + " : " + visible);
     const observer = new window.IntersectionObserver(([entry]) => {
       setVisible(entry.isIntersecting);
     }, options);

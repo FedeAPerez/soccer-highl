@@ -30,10 +30,10 @@ Match.defaultProps = {
   loadImage: false
 };
 
-const Matchs = ({ matchs }) => {
+const Matchs = ({ id, matchs }) => {
   const [ref, isOnScreen] = onScreenHook();
   return (
-    <main className={namespace} ref={ref}>
+    <main className={namespace} id={`${namespace}__${id}`} ref={ref}>
       {matchs.map(match => (
         <Match
           key={`fut-matchs-${match.title}`}
