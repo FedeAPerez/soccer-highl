@@ -18,9 +18,13 @@ const TagMatchs = ({ length }) =>
   withTagValidator(length > 3, `${length} Partidos`);
 
 const TagLeague = ({ competition }) =>
-  withTagValidator(["Ligue 1"].includes(competition), "Más vistos", {
-    modifier: modifier.green
-  });
+  withTagValidator(
+    ["Ligue 1", "Serie A", "La Liga", "Premier League"].includes(competition),
+    "Más vistos",
+    {
+      modifier: modifier.green
+    }
+  );
 
 const League = ({ id, leagueCountry, leagueCompetition, matchs }) => (
   <article className={`${namespace}__league`}>
