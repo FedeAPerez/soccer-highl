@@ -5,6 +5,11 @@ import "./tag.scss";
 
 const namespace = "fut-tag";
 
+const modifier = {
+  red: "red",
+  green: "green"
+};
+
 const Tag = ({ children, modifier }) => (
   <span className={classNames(namespace, `${namespace}--${modifier}`)}>
     {children}
@@ -12,11 +17,12 @@ const Tag = ({ children, modifier }) => (
 );
 
 Tag.propTypes = {
-  modifier: PropTypes.oneOf(["green", "red"])
+  modifier: PropTypes.oneOf(modifier)
 };
 
 Tag.defaultProps = {
-  modifier: "red"
+  modifier: modifier.red
 };
 
+export { modifier };
 export default Tag;

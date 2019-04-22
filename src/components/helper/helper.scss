@@ -1,0 +1,21 @@
+.fut-helper {
+  display: block;
+  margin: 0rem auto;
+  padding: 1rem;
+  width: 75%;
+
+  h1 {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  &__helps {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__help {
+      margin-bottom: 12px;
+    }
+  }
+}
