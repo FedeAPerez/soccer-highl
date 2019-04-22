@@ -1,30 +1,26 @@
 import React from "react";
 import { arrayOf, string } from "prop-types";
-import Tag from "../components/tag";
+import Tag, { modifier } from "../components/tag";
 import Matchs from "../matchs";
 import "./leagues.scss";
 
 const namespace = "fut-leagues";
 
-const TagMatchs = ({ length }) => {
-  const shouldTagLeague = length > 3;
-
-  if (shouldTagLeague) {
-    return <Tag>{`${length} Partidos`}</Tag>;
+const withTagValidator = (validator, children, props) => {
+  if (validator) {
+    return <Tag {...props}>{children}</Tag>;
   } else {
     return null;
   }
 };
 
-const TagLeague = ({ competition }) => {
-  const shouldTagCompetition = ["Ligue 1"].includes(competition);
+const TagMatchs = ({ length }) =>
+  withTagValidator(length > 3, `${length} Partidos`);
 
-  if (shouldTagCompetition) {
-    return <Tag modifier={"green"}>Más vistos</Tag>;
-  } else {
-    return null;
-  }
-};
+const TagLeague = ({ competition }) =>
+  withTagValidator(["Ligue 1"].includes(competition), "Más vistos", {
+    modifier: modifier.green
+  });
 
 const League = ({ id, leagueCountry, leagueCompetition, matchs }) => (
   <article className={`${namespace}__league`}>
