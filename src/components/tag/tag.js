@@ -24,5 +24,5 @@ Tag.defaultProps = {
   modifier: modifier.red
 };
 
-export { modifier };
+export { modifier as TagModifier };
 export default Tag;

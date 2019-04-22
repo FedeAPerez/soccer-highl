@@ -1,6 +1,6 @@
 import React from "react";
 import { arrayOf, string } from "prop-types";
-import Tag, { modifier } from "../components/tag";
+import Tag, { TagModifier } from "../components/tag";
 import Matchs from "../matchs";
 import "./leagues.scss";
 
@@ -22,7 +22,7 @@ const TagLeague = ({ competition }) =>
     ["Ligue 1", "Serie A", "La Liga", "Premier League"].includes(competition),
     "Más vistos",
     {
-      modifier: modifier.green
+      modifier: TagModifier.green
     }
   );
 

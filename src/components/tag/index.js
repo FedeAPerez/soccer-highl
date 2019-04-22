@@ -1,5 +1,5 @@
 import Tag from "./tag";
-import { modifier } from "./tag";
+import { TagModifier } from "./tag";
 
-export { modifier };
+export { TagModifier };
 export default Tag;
