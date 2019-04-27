@@ -1,5 +1,6 @@
 import React from "react";
 import Tag, { TagModifier } from "../tag";
+import { Emoji } from "../../lib/main";
 import "./helper.scss";
 
 const namespace = "fut-helper";
@@ -12,8 +13,10 @@ const Helper = () => (
         <Tag>Partidos</Tag> para la mayor cantidad de contenido.
       </div>
       <div className={`${namespace}__helps__help`}>
-        <Tag modifier={TagModifier.green}>Más vistos</Tag> para las mejores
-        ligas y torneos del mundo.
+        <Tag modifier={TagModifier.green}>
+          <Emoji>1F525</Emoji>Más vistos
+        </Tag>
+        para las mejores ligas y torneos del mundo.
       </div>
     </main>
   </section>

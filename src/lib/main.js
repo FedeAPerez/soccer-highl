@@ -5,7 +5,7 @@ const getMessageHtml = element => {
 };
 
 const Emoji = ({ children }) => (
-  <span dangerouslySetInnerHTML={getMessageHtml(children)} />
+  <span dangerouslySetInnerHTML={getMessageHtml(`&#x${children}`)} />
 );
 
 export { getMessageHtml, Emoji };
