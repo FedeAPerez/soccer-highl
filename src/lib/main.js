@@ -8,8 +8,8 @@ const Emoji = ({ children }) => (
   <span dangerouslySetInnerHTML={getMessageHtml(`&#x${children}`)} />
 );
 
-const getEmoji = emojiId => {
-  switch (emojiId) {
+const GetEmoji = ({ id }) => {
+  switch (id) {
     case "fire":
       return <Emoji>1F525</Emoji>;
     case "soccer":
@@ -17,4 +17,4 @@ const getEmoji = emojiId => {
   }
 };
 
-export { getMessageHtml, getEmoji };
+export { getMessageHtml, GetEmoji };

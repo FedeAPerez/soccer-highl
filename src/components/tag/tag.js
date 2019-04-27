@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+import { string, oneOf } from "prop-types";
 import classNames from "classnames";
 import "./tag.scss";
 
@@ -10,14 +10,17 @@ const modifier = {
   green: "green"
 };
 
-const Tag = ({ children, modifier }) => (
-  <span className={classNames(namespace, `${namespace}--${modifier}`)}>
+const Tag = ({ children, className, modifier }) => (
+  <span
+    className={classNames(namespace, className, `${namespace}--${modifier}`)}
+  >
     {children}
   </span>
 );
 
 Tag.propTypes = {
-  modifier: PropTypes.oneOf(modifier)
+  className: string,
+  modifier: oneOf(modifier)
 };
 
 Tag.defaultProps = {
