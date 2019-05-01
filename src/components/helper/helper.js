@@ -1,5 +1,5 @@
 import React from "react";
-import Tag, { TagModifier } from "../tag";
+import Tag from "../tag";
 import { GetEmoji } from "../../lib/main";
 import "./helper.scss";
 
@@ -13,7 +13,7 @@ const Helper = () => (
         <Tag className="mr-8">Partidos</Tag>para la mayor cantidad de contenido.
       </div>
       <div className={`${namespace}__helps__help`}>
-        <Tag className="mr-8" modifier={TagModifier.green}>
+        <Tag className="mr-8" modifier={"green"}>
           <GetEmoji id="fire" />
           Más vistos
         </Tag>

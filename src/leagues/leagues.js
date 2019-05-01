@@ -1,6 +1,6 @@
 import React from "react";
-import { arrayOf, string } from "prop-types";
-import Tag, { TagModifier } from "../components/tag";
+import { arrayOf, shape, string } from "prop-types";
+import Tag from "../components/tag";
 import Matchs from "../matchs";
 import { GetEmoji } from "../lib/main";
 import "./leagues.scss";
@@ -25,7 +25,7 @@ const TagLeague = ({ className, competition }) =>
       <GetEmoji id="fire" /> mas vistos
     </span>,
     {
-      modifier: TagModifier.green,
+      modifier: "green",
       className
     }
   );
@@ -59,7 +59,13 @@ const Leagues = ({ leagues }) => (
 );
 
 Leagues.propTypes = {
-  leagues: arrayOf(League)
+  leagues: arrayOf(
+    shape({
+      id: string,
+      leagueCountry: string,
+      leagueCompetition: string
+    })
+  )
 };
 
 export default Leagues;

@@ -3,7 +3,7 @@ import Leagues from "./features/leagues";
 import Header from "./components/header";
 import Helper from "./components/helper";
 import Footer from "./components/footer";
-import "./base.css";
+import "./sass/_main.scss";
 
 const App = ({ children, ...props }) => {
   return (

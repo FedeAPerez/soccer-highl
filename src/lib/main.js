@@ -14,6 +14,8 @@ const GetEmoji = ({ id }) => {
       return <Emoji>1F525</Emoji>;
     case "soccer":
       return <Emoji>26BD</Emoji>;
+    default:
+      throw new Error("[FUT - GetEmoji id not found]");
   }
 };
 
