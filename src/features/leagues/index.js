@@ -5,7 +5,7 @@ import { useSoccerVideosByLeague } from "../../hooks/soccer-hooks";
 const getLeagueCountry = name => name.split(":")[0];
 const getLeagueCompetition = name => String(name.split(":")[1]).trim();
 
-const enhance = () => {
+const EnhancedLeagues = () => {
   const leagues = useSoccerVideosByLeague();
   if (leagues && leagues.length > 0) {
     console.table(leagues);
@@ -24,4 +24,4 @@ const enhance = () => {
   }
 };
 
-export default enhance;
+export default EnhancedLeagues;

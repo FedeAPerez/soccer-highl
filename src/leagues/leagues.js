@@ -3,7 +3,6 @@ import { arrayOf, shape, string } from "prop-types";
 import Tag from "../components/tag";
 import Matchs from "../matchs";
 import { GetEmoji } from "../lib/main";
-import "./leagues.scss";
 
 const namespace = "fut-leagues";
 

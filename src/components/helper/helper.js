@@ -1,7 +1,6 @@
 import React from "react";
 import Tag from "../tag";
 import { GetEmoji } from "../../lib/main";
-import "./helper.scss";
 
 const namespace = "fut-helper";
 

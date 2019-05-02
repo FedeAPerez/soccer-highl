@@ -1,5 +1,18 @@
+// Background colors
 $background-grey: #ecf0f1;
+$background-black: #3d4566;
 
+// Tag colors
+$background-tag-bg-red: #ffcdd2;
+$background-tag-color-red: #b71c1c;
+
+$background-tag-bg-green: #e0f2f1;
+$background-tag-color-green: #004d40;
+
+@import "./header.scss";
+@import "./helper.scss";
+@import "./leagues.scss";
+@import "./tag.scss";
 @import "./footer.scss";
 
 * {

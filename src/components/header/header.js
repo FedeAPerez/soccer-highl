@@ -1,6 +1,5 @@
 import React from "react";
 import { GetEmoji } from "../../lib/main";
-import "./header.css";
 
 const namespace = "fut-header";
 

@@ -1,7 +1,6 @@
 import React from "react";
 import { string, oneOf } from "prop-types";
 import classNames from "classnames";
-import "./tag.scss";
 
 const namespace = "fut-tag";
 

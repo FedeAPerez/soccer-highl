@@ -4,14 +4,17 @@
   padding-left: 8px;
   padding-right: 8px;
   border-radius: 4px;
-  background-color: #ffcdd2;
-  color: #b71c1c;
   vertical-align: middle;
   font-size: 12px;
   font-weight: 600;
 }
 
 .fut-tag--green {
-  background-color: #e0f2f1;
-  color: #004d40;
+  background-color: $background-tag-bg-green;
+  color: $background-tag-color-green;
+}
+
+.fut-tag--red {
+  background-color: $background-tag-bg-red;
+  color: $background-tag-color-red;
 }

@@ -47,14 +47,14 @@
     margin-bottom: 20px;
 
     &__thumbnail {
-      background: #e0dbdb;
+      background: $background-grey;
       border-radius: 4px;
       height: 131.25px;
       width: 100%;
     }
 
     &__placeholder {
-      background: #e0dbdb;
+      background: $background-grey;
       border-radius: 4px;
       height: 131.25px;
       width: 100%;
