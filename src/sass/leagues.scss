@@ -33,31 +33,3 @@
     margin-left: 6px;
   }
 }
-
-.fut-leagues__matchs {
-  display: flex;
-  width: fit-content;
-  flex-wrap: wrap;
-  max-width: 100%;
-
-  &__match {
-    margin-right: 2rem;
-    max-width: 238px;
-    width: 250px;
-    margin-bottom: 20px;
-
-    &__thumbnail {
-      background: $background-grey;
-      border-radius: 4px;
-      height: 131.25px;
-      width: 100%;
-    }
-
-    &__placeholder {
-      background: $background-grey;
-      border-radius: 4px;
-      height: 131.25px;
-      width: 100%;
-    }
-  }
-}

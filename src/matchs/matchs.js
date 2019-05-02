@@ -4,50 +4,40 @@ import { onScreenHook } from "../hooks/on-screen-hook";
 
 const namespace = "fut-leagues__matchs";
 
-const Match = ({ title, thumbnail, loadImage }) => (
-  <section className={`${namespace}__match`}>
-    {loadImage && (
-      <img
-        className={`${namespace}__match__thumbnail`}
-        src={thumbnail}
-        alt={"match"}
-      />
-    )}
-    {!loadImage && <div className={`${namespace}__match__placeholder`} />}
-    <footer>
-      <h1>{title}</h1>
-    </footer>
-  </section>
-);
-
-Match.propTypes = {
-  title: string.isRequired,
-  thumbnail: string.isRequired,
-  loadImage: bool
-};
-
-Match.defaultProps = {
-  loadImage: false
-};
-
 const Matchs = ({ id, matchs }) => {
   const [ref, isOnScreen] = onScreenHook();
   return (
     <main className={namespace} id={`${namespace}__${id}`} ref={ref}>
       {matchs.map(match => (
-        <Match
+        <section
           key={`fut-matchs-${match.title}`}
-          title={match.title}
-          thumbnail={match.thumbnail}
-          loadImage={isOnScreen}
-        />
+          className={`${namespace}__match`}
+        >
+          {isOnScreen && (
+            <img
+              className={`${namespace}__match__thumbnail`}
+              src={match.thumbnail}
+              alt={"match"}
+            />
+          )}
+          {!isOnScreen && (
+            <div className={`${namespace}__match__placeholder`} />
+          )}
+          <footer>
+            <h1>{match.title}</h1>
+          </footer>
+        </section>
       ))}
     </main>
   );
 };
 
 Matchs.propTypes = {
-  matchs: arrayOf(Match)
+  matchs: arrayOf({
+    title: string.isRequired,
+    thumbnail: string.isRequired,
+    loadImage: bool
+  })
 };
 
 export default Matchs;
