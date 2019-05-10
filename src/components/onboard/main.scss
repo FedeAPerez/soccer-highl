@@ -97,6 +97,16 @@
   border: 1px solid;
 }
 
+.base-button {
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: thin dotted;
+  }
+}
+
 .button {
   display: block;
   padding-top: 6px;
@@ -109,14 +119,6 @@
   color: white;
   font-family: "Open Sans";
   transition: background 0.8s;
-
-  &:hover {
-    cursor: pointer;
-  }
-
-  &:focus {
-    outline: thin dotted;
-  }
 
   &:active {
     background-color: #6eb9f7;

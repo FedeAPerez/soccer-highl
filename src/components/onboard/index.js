@@ -21,7 +21,7 @@ const Onboard = () => {
                 {onboard.user.entity}
               </span>
               <button
-                className={`${namespace}__main__content__header__close`}
+                className={`${namespace}__main__content__header__close base-button`}
                 onClick={e => {
                   e.preventDefault();
                   setIsVisible(false);
@@ -40,7 +40,7 @@ const Onboard = () => {
             <hr className="separator" />
             <footer className={`${namespace}__main__content__footer`}>
               <button
-                className={`${namespace}__main__content__footer__next button`}
+                className={`${namespace}__main__content__footer__next base-button button`}
               >
                 {onboard.actions.next}
               </button>
@@ -57,7 +57,7 @@ const Onboard = () => {
           e.preventDefault();
           setIsVisible(true);
         }}
-        className="onboard_welcome button"
+        className="onboard_welcome base-button button"
       >
         {onboard.actions.comeBack}
       </button>
