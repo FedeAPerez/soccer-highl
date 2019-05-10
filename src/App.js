@@ -11,7 +11,6 @@ const App = ({ children, ...props }) => {
   return (
     <main>
       <Header />
-      <Helper />
       <Leagues />
       <Footer />
       <Onboard />

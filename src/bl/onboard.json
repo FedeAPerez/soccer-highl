@@ -8,8 +8,13 @@
       "next": "Siguiente",
       "comeBack": "Ver introducción"
     },
+    "pages": {
+      "max": 2,
+      "first": 1
+    },
     "introduction": {
-      "description": "Futbolín es la nueva forma de enterarte de los últimos partidos."
+      "description": "Futbolín es la nueva forma de enterarte de los últimos partidos.",
+      "image": "soccer.jpg"
     }
   }
 }

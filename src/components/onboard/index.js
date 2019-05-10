@@ -1,13 +1,30 @@
 import React, { useState } from "react";
 import Close from "./close";
 import Profile from "./profile";
+import Button from "./button";
+import Helper from "../helper";
 import { onboard } from "../../bl/onboard.json";
+const namespace = "onboard";
+
+const Introduction = () => (
+  <React.Fragment>
+    <img
+      className={`${namespace}__main__content__image`}
+      src={onboard.introduction.image}
+    />
+    <main className={`${namespace}__main__content__text`}>
+      {onboard.introduction.description}
+    </main>
+  </React.Fragment>
+);
+
+const Help = () => <Helper />;
 
 const Onboard = () => {
   const [isVisible, setIsVisible] = useState(true);
+  const [page, setPage] = useState(1);
 
   if (isVisible) {
-    let namespace = "onboard";
     return (
       <section className={namespace}>
         <section className={`${namespace}__main`}>
@@ -20,30 +37,35 @@ const Onboard = () => {
                 <b>{onboard.user.name}</b>
                 {onboard.user.entity}
               </span>
-              <button
-                className={`${namespace}__main__content__header__close base-button`}
+              <Button
+                className={`${namespace}__main__content__header__close`}
                 onClick={e => {
                   e.preventDefault();
                   setIsVisible(false);
                 }}
               >
                 <Close />
-              </button>
+              </Button>
             </header>
-            <img
-              className={`${namespace}__main__content__image`}
-              src="soccer.jpg"
-            />
-            <main className={`${namespace}__main__content__text`}>
-              {onboard.introduction.description}
-            </main>
+            {page === 1 ? <Introduction /> : null}
+            {page === 2 ? <Help /> : null}
             <hr className="separator" />
             <footer className={`${namespace}__main__content__footer`}>
-              <button
-                className={`${namespace}__main__content__footer__next base-button button`}
-              >
-                {onboard.actions.next}
-              </button>
+              <Button
+                className={`${namespace}__main__content__footer__next button`}
+                label={onboard.actions.next}
+                onClick={
+                  page < onboard.pages.max
+                    ? e => {
+                        e.preventDefault();
+                        setPage(page + 1);
+                      }
+                    : e => {
+                        e.preventDefault();
+                        setIsVisible(false);
+                      }
+                }
+              />
             </footer>
           </section>
         </section>
@@ -52,15 +74,15 @@ const Onboard = () => {
   }
   if (!isVisible) {
     return (
-      <button
+      <Button
+        label={onboard.actions.comeBack}
         onClick={e => {
           e.preventDefault();
+          setPage(onboard.pages.first);
           setIsVisible(true);
         }}
-        className="onboard_welcome base-button button"
-      >
-        {onboard.actions.comeBack}
-      </button>
+        className="onboard_welcome button"
+      />
     );
   }
 };
