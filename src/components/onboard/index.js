@@ -39,7 +39,9 @@ const Onboard = () => {
             </main>
             <hr className="separator" />
             <footer className={`${namespace}__main__content__footer`}>
-              <button className={`${namespace}__main__content__footer__next`}>
+              <button
+                className={`${namespace}__main__content__footer__next button`}
+              >
                 {onboard.actions.next}
               </button>
             </footer>
@@ -55,7 +57,7 @@ const Onboard = () => {
           e.preventDefault();
           setIsVisible(true);
         }}
-        className="onboard_welcome"
+        className="onboard_welcome button"
       >
         {onboard.actions.comeBack}
       </button>
