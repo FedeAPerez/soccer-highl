@@ -44,14 +44,14 @@ const Finish = () => (
 );
 
 const Header = ({ setIsVisible }) => (
-  <header className={`${namespace}__main__content__header`}>
+  <header className={`${namespace}__main__header`}>
     <span>
-      <Profile className={`${namespace}__main__content__header__image`} />
+      <Profile className={`${namespace}__main__header__image`} />
       <b>{onboard.user.name}</b>
       {onboard.user.entity}
     </span>
     <Button
-      className={`${namespace}__main__content__header__close`}
+      className={`${namespace}__main__header__close`}
       onClick={e => {
         e.preventDefault();
         setIsVisible(false);
@@ -63,10 +63,10 @@ const Header = ({ setIsVisible }) => (
 );
 
 const Footer = ({ page, setPage, setIsVisible }) => (
-  <footer className={`${namespace}__main__content__footer`}>
+  <footer className={`${namespace}__main__footer`}>
     {page > 1 ? (
       <Button
-        className={`${namespace}__main__content__footer__next button`}
+        className={`${namespace}__main__footer__next button`}
         label={onboard.actions.back}
         onClick={e => {
           e.preventDefault();
@@ -75,7 +75,7 @@ const Footer = ({ page, setPage, setIsVisible }) => (
       />
     ) : null}
     <Button
-      className={`${namespace}__main__content__footer__next button`}
+      className={`${namespace}__main__footer__next button`}
       label={onboard.actions.next}
       onClick={
         page < onboard.pages.max
