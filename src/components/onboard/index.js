@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Close from "./close";
 import Profile from "./profile";
+import { onboard } from "../../bl/onboard.json";
 
 const Onboard = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -16,7 +17,8 @@ const Onboard = () => {
                 <Profile
                   className={`${namespace}__main__content__header__image`}
                 />
-                <b>Fede Pérez</b> de Futbolín
+                <b>{onboard.user.name}</b>
+                {onboard.user.entity}
               </span>
               <button
                 className={`${namespace}__main__content__header__close`}
@@ -33,12 +35,12 @@ const Onboard = () => {
               src="soccer.jpg"
             />
             <main className={`${namespace}__main__content__text`}>
-              Futbolín es la nueva forma de enterarte de los últimos partidos.
+              {onboard.introduction.description}
             </main>
             <hr className="separator" />
             <footer className={`${namespace}__main__content__footer`}>
               <button className={`${namespace}__main__content__footer__next`}>
-                Siguiente
+                {onboard.actions.next}
               </button>
             </footer>
           </section>
@@ -55,7 +57,7 @@ const Onboard = () => {
         }}
         className="onboard_welcome"
       >
-        Bienvenido
+        {onboard.actions.comeBack}
       </button>
     );
   }

@@ -1,0 +1,15 @@
+{
+  "onboard": {
+    "user": {
+      "name": "Fede Pérez",
+      "entity": " de Futbolín"
+    },
+    "actions": {
+      "next": "Siguiente",
+      "comeBack": "Ver introducción"
+    },
+    "introduction": {
+      "description": "Futbolín es la nueva forma de enterarte de los últimos partidos."
+    }
+  }
+}
