@@ -15,10 +15,16 @@ $background-tag-color-green: #004d40;
 @import "./matchs.scss";
 @import "./tag.scss";
 @import "./footer.scss";
+@import "../components//onboard//main.scss";
 
 * {
   -webkit-font-smoothing: antialiased;
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
+}
+
+#root {
+  position: relative;
+  min-height: 100vh;
 }
 
 html {

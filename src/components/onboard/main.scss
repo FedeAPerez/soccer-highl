@@ -1,0 +1,123 @@
+.onboard {
+  /* Color */
+  background-color: rgba(0, 0, 0, 0.8);
+  /* Position */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  font-family: "Open Sans";
+
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
+.onboard__main {
+  /* spacings */
+  margin: auto;
+  /* Layout */
+  width: 30%;
+  height: fit-content;
+  /* Position */
+  position: absolute;
+  top: 200px;
+  left: 0;
+  right: 0;
+
+  &__content {
+    /* Color */
+    background-color: white;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.8);
+    /* Spacings */
+    padding: 16px;
+    border-radius: 4px;
+
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 300;
+
+      b {
+        font-weight: 600;
+      }
+
+      &__image {
+        width: 32px;
+        height: 32px;
+        border-radius: 100%;
+        align-items: center;
+        vertical-align: middle;
+        margin-right: 4px;
+      }
+
+      &__close {
+        display: block;
+        border: none;
+        background: none;
+        color: white;
+        padding: 0;
+      }
+
+      &__close:hover {
+        cursor: pointer;
+      }
+    }
+
+    &__image {
+      margin: 1rem auto;
+      width: 100%;
+      border-radius: 4px;
+    }
+
+    &__text {
+      text-align: center;
+    }
+
+    &__footer {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 1rem;
+
+      &__next {
+        all: unset;
+        display: block;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        background-color: #0069c0;
+        border-radius: 4px;
+        padding-left: 16px;
+        padding-right: 16px;
+        color: white;
+        font-family: "Open Sans";
+      }
+
+      &__next:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.onboard_welcome {
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  background-color: white;
+  border-radius: 8px;
+  padding: 1rem;
+  width: fit-content;
+  border-color: black;
+  border: 1px solid;
+}
+
+.separator {
+  border-color: rgba(0, 0, 0, 0.12);
+  border-width: 1px 0 0;
+  margin: 0;
+  margin-top: 12px;
+  margin-bottom: 8px;
+}
