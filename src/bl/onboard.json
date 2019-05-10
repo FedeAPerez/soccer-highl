@@ -14,12 +14,13 @@
       "first": 1
     },
     "introduction": {
-      "title": "Bienvenido!",
+      "title": "Bienvenido a Futbolín!",
       "description": "Futbolín es la nueva forma de enterarte de los últimos partidos.",
       "altImage": "Imagen de partido de fútbol",
       "image": "soccer.jpg"
     },
     "finish": {
+      "title": "Gracias!",
       "description": "Espero que disfrutes de los mejores momentos de la jornada futbolísitca como nosotros haciendo este sitio."
     }
   }

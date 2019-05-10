@@ -6,9 +6,21 @@ import Helper from "../helper";
 import { onboard } from "../../bl/onboard.json";
 const namespace = "onboard";
 
+const MainContent = ({ page }) => (
+  <section className={`${namespace}__main__content`}>
+    {page === 1 ? <Introduction /> : null}
+    {page === 2 ? <Help /> : null}
+    {page === 3 ? <Finish /> : null}
+  </section>
+);
+
+const MemoMainContent = React.memo(MainContent);
+
 const Introduction = () => (
   <React.Fragment>
-    <h1>{onboard.introduction.title}</h1>
+    <h1 className={`${namespace}__main__content__title`}>
+      {onboard.introduction.title}
+    </h1>
     <img
       className={`${namespace}__main__content__image`}
       src={onboard.introduction.image}
@@ -22,6 +34,9 @@ const Introduction = () => (
 
 const Finish = () => (
   <React.Fragment>
+    <h1 className={`${namespace}__main__content__title`}>
+      {onboard.finish.title}
+    </h1>
     <main className={`${namespace}__main__content__text`}>
       {onboard.finish.description}
     </main>
@@ -87,14 +102,10 @@ const Onboard = () => {
     return (
       <section className={namespace}>
         <section className={`${namespace}__main`}>
-          <section className={`${namespace}__main__content`}>
-            <Header setIsVisible={setIsVisible} />
-            {page === 1 ? <Introduction /> : null}
-            {page === 2 ? <Help /> : null}
-            {page === 3 ? <Finish /> : null}
-            <hr className="separator" />
-            <Footer page={page} setPage={setPage} setIsVisible={setIsVisible} />
-          </section>
+          <Header setIsVisible={setIsVisible} />
+          <MemoMainContent page={page} />
+          <hr className="separator" />
+          <Footer page={page} setPage={setPage} setIsVisible={setIsVisible} />
         </section>
       </section>
     );
