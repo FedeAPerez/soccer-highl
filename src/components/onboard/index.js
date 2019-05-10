@@ -62,7 +62,7 @@ const Header = ({ setIsVisible }) => (
   </header>
 );
 
-const Footer = ({ page, setPage, setIsVisible }) => (
+const Footer = ({ page, setPage, setIsVisible, saveWatched }) => (
   <footer className={`${namespace}__main__footer`}>
     <Button
       className={`${namespace}__main__footer__next button`}
@@ -76,6 +76,7 @@ const Footer = ({ page, setPage, setIsVisible }) => (
           : e => {
               e.preventDefault();
               setIsVisible(false);
+              saveWatched();
             }
       }
     />
@@ -92,7 +93,15 @@ const Help = () => (
 );
 
 const Onboard = () => {
-  const [isVisible, setIsVisible] = useState(true);
+  const saveWatched = () => {
+    window.localStorage.setItem("onboarding", "watched");
+  };
+
+  const getWatched = () => {
+    return window.localStorage.getItem("onboarding") !== "watched";
+  };
+
+  const [isVisible, setIsVisible] = useState(getWatched());
   const [page, setPage] = useState(1);
 
   if (isVisible) {
@@ -102,7 +111,12 @@ const Onboard = () => {
           <Header setIsVisible={setIsVisible} />
           <MemoMainContent page={page} />
           <hr className="separator" />
-          <Footer page={page} setPage={setPage} setIsVisible={setIsVisible} />
+          <Footer
+            page={page}
+            setPage={setPage}
+            setIsVisible={setIsVisible}
+            saveWatched={saveWatched}
+          />
         </section>
       </section>
     );
