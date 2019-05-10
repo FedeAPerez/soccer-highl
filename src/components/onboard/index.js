@@ -104,36 +104,37 @@ const Onboard = () => {
   const [isVisible, setIsVisible] = useState(getWatched());
   const [page, setPage] = useState(1);
 
-  if (isVisible) {
-    return (
-      <section className={namespace}>
-        <section className={`${namespace}__main`}>
-          <Header setIsVisible={setIsVisible} />
-          <MemoMainContent page={page} />
-          <hr className="separator" />
-          <Footer
-            page={page}
-            setPage={setPage}
-            setIsVisible={setIsVisible}
-            saveWatched={saveWatched}
-          />
+  return (
+    <React.Fragment>
+      {isVisible && (
+        <section className={namespace}>
+          <section className={`${namespace}__main`}>
+            <Header setIsVisible={setIsVisible} />
+            <MemoMainContent page={page} />
+            <hr className="separator" />
+            <Footer
+              page={page}
+              setPage={setPage}
+              setIsVisible={setIsVisible}
+              saveWatched={saveWatched}
+            />
+          </section>
         </section>
-      </section>
-    );
-  }
-  if (!isVisible) {
-    return (
-      <Button
-        label={onboard.actions.comeBack}
-        onClick={e => {
-          e.preventDefault();
-          setPage(onboard.pages.first);
-          setIsVisible(true);
-        }}
-        className="onboard_welcome button"
-      />
-    );
-  }
+      )}
+
+      {!isVisible && (
+        <Button
+          label={onboard.actions.comeBack}
+          onClick={e => {
+            e.preventDefault();
+            setPage(onboard.pages.first);
+            setIsVisible(true);
+          }}
+          className="onboard_welcome button"
+        />
+      )}
+    </React.Fragment>
+  );
 };
 
 export default Onboard;
