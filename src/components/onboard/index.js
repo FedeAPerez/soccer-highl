@@ -8,6 +8,7 @@ const namespace = "onboard";
 
 const Introduction = () => (
   <React.Fragment>
+    <h1>{onboard.introduction.title}</h1>
     <img
       className={`${namespace}__main__content__image`}
       src={onboard.introduction.image}
@@ -17,6 +18,63 @@ const Introduction = () => (
       {onboard.introduction.description}
     </main>
   </React.Fragment>
+);
+
+const Finish = () => (
+  <React.Fragment>
+    <main className={`${namespace}__main__content__text`}>
+      {onboard.finish.description}
+    </main>
+  </React.Fragment>
+);
+
+const Header = ({ setIsVisible }) => (
+  <header className={`${namespace}__main__content__header`}>
+    <span>
+      <Profile className={`${namespace}__main__content__header__image`} />
+      <b>{onboard.user.name}</b>
+      {onboard.user.entity}
+    </span>
+    <Button
+      className={`${namespace}__main__content__header__close`}
+      onClick={e => {
+        e.preventDefault();
+        setIsVisible(false);
+      }}
+    >
+      <Close />
+    </Button>
+  </header>
+);
+
+const Footer = ({ page, setPage, setIsVisible }) => (
+  <footer className={`${namespace}__main__content__footer`}>
+    {page > 1 ? (
+      <Button
+        className={`${namespace}__main__content__footer__next button`}
+        label={onboard.actions.back}
+        onClick={e => {
+          e.preventDefault();
+          setPage(page - 1);
+        }}
+      />
+    ) : null}
+    <Button
+      className={`${namespace}__main__content__footer__next button`}
+      label={onboard.actions.next}
+      onClick={
+        page < onboard.pages.max
+          ? e => {
+              e.preventDefault();
+              setPage(page + 1);
+            }
+          : e => {
+              e.preventDefault();
+              setIsVisible(false);
+            }
+      }
+    />
+  </footer>
 );
 
 const Help = () => <Helper />;
@@ -30,44 +88,12 @@ const Onboard = () => {
       <section className={namespace}>
         <section className={`${namespace}__main`}>
           <section className={`${namespace}__main__content`}>
-            <header className={`${namespace}__main__content__header`}>
-              <span>
-                <Profile
-                  className={`${namespace}__main__content__header__image`}
-                />
-                <b>{onboard.user.name}</b>
-                {onboard.user.entity}
-              </span>
-              <Button
-                className={`${namespace}__main__content__header__close`}
-                onClick={e => {
-                  e.preventDefault();
-                  setIsVisible(false);
-                }}
-              >
-                <Close />
-              </Button>
-            </header>
+            <Header setIsVisible={setIsVisible} />
             {page === 1 ? <Introduction /> : null}
             {page === 2 ? <Help /> : null}
+            {page === 3 ? <Finish /> : null}
             <hr className="separator" />
-            <footer className={`${namespace}__main__content__footer`}>
-              <Button
-                className={`${namespace}__main__content__footer__next button`}
-                label={onboard.actions.next}
-                onClick={
-                  page < onboard.pages.max
-                    ? e => {
-                        e.preventDefault();
-                        setPage(page + 1);
-                      }
-                    : e => {
-                        e.preventDefault();
-                        setIsVisible(false);
-                      }
-                }
-              />
-            </footer>
+            <Footer page={page} setPage={setPage} setIsVisible={setIsVisible} />
           </section>
         </section>
       </section>

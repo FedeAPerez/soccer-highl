@@ -6,16 +6,21 @@
     },
     "actions": {
       "next": "Siguiente",
+      "back": "Atrás",
       "comeBack": "Ver introducción"
     },
     "pages": {
-      "max": 2,
+      "max": 3,
       "first": 1
     },
     "introduction": {
+      "title": "Bienvenido!",
       "description": "Futbolín es la nueva forma de enterarte de los últimos partidos.",
       "altImage": "Imagen de partido de fútbol",
       "image": "soccer.jpg"
+    },
+    "finish": {
+      "description": "Espero que disfrutes de los mejores momentos de la jornada futbolísitca como nosotros haciendo este sitio."
     }
   }
 }

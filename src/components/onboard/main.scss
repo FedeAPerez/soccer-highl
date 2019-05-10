@@ -41,7 +41,14 @@
       justify-content: space-between;
       font-weight: 300;
 
+      span {
+        font-size: 14px;
+        color: #bdbdbd;
+        font-weight: 400;
+      }
+
       b {
+        color: #686868;
         font-weight: 600;
       }
 
@@ -79,7 +86,7 @@
 
     &__footer {
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-between;
       margin-top: 1rem;
     }
   }
@@ -100,6 +107,7 @@
 .base-button {
   &:hover {
     cursor: pointer;
+    opacity: 0.7;
   }
 
   &:focus {
@@ -118,7 +126,6 @@
   font-size: 16px;
   color: white;
   font-family: "Open Sans";
-  transition: background 0.8s;
 
   &:active {
     background-color: #6eb9f7;
