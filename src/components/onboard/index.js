@@ -11,6 +11,7 @@ const Introduction = () => (
     <img
       className={`${namespace}__main__content__image`}
       src={onboard.introduction.image}
+      alt={onboard.introduction.altImage}
     />
     <main className={`${namespace}__main__content__text`}>
       {onboard.introduction.description}

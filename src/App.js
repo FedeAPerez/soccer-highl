@@ -1,7 +1,6 @@
 import React from "react";
 import Leagues from "./features/leagues";
 import Header from "./components/header";
-import Helper from "./components/helper";
 import Footer from "./components/footer";
 import Onboard from "./components/onboard";
 

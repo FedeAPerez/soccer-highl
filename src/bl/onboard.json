@@ -14,6 +14,7 @@
     },
     "introduction": {
       "description": "Futbolín es la nueva forma de enterarte de los últimos partidos.",
+      "altImage": "Imagen de partido de fútbol",
       "image": "soccer.jpg"
     }
   }
