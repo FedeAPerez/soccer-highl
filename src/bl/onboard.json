@@ -19,6 +19,9 @@
       "altImage": "Imagen de partido de fútbol",
       "image": "soccer.jpg"
     },
+    "help": {
+      "title": "¿Cómo clasificamos nuestros partidos?"
+    },
     "finish": {
       "title": "Gracias!",
       "description": "Espero que disfrutes de los mejores momentos de la jornada futbolísitca como nosotros haciendo este sitio."

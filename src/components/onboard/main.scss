@@ -20,7 +20,7 @@
   /* spacings */
   margin: auto;
   /* Layout */
-  width: 30%;
+  width: 35%;
   height: fit-content;
   /* Position */
   position: absolute;
@@ -35,7 +35,7 @@
   border-radius: 4px;
 
   &__content {
-    min-height: 304px;
+    min-height: 314px;
 
     &__title {
       text-align: center;
@@ -58,7 +58,7 @@
 
   &__footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     margin-top: 1rem;
   }
 
@@ -120,7 +120,7 @@
   }
 
   &:focus {
-    outline: thin dotted black;
+    outline: none;
   }
 }
 

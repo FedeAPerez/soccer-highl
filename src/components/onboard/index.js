@@ -64,16 +64,6 @@ const Header = ({ setIsVisible }) => (
 
 const Footer = ({ page, setPage, setIsVisible }) => (
   <footer className={`${namespace}__main__footer`}>
-    {page > 1 ? (
-      <Button
-        className={`${namespace}__main__footer__next button`}
-        label={onboard.actions.back}
-        onClick={e => {
-          e.preventDefault();
-          setPage(page - 1);
-        }}
-      />
-    ) : null}
     <Button
       className={`${namespace}__main__footer__next button`}
       label={onboard.actions.next}
@@ -92,7 +82,14 @@ const Footer = ({ page, setPage, setIsVisible }) => (
   </footer>
 );
 
-const Help = () => <Helper />;
+const Help = () => (
+  <React.Fragment>
+    <h1 className={`${namespace}__main__content__title`}>
+      {onboard.help.title}
+    </h1>
+    <Helper />
+  </React.Fragment>
+);
 
 const Onboard = () => {
   const [isVisible, setIsVisible] = useState(true);
