@@ -21,14 +21,14 @@ const Introduction = () => (
     <h1 className={`${namespace}__main__content__title`}>
       {onboard.introduction.title}
     </h1>
+    <main className={`${namespace}__main__content__text`}>
+      {onboard.introduction.description}
+    </main>
     <img
       className={`${namespace}__main__content__image`}
       src={onboard.introduction.image}
       alt={onboard.introduction.altImage}
     />
-    <main className={`${namespace}__main__content__text`}>
-      {onboard.introduction.description}
-    </main>
   </React.Fragment>
 );
 
@@ -124,14 +124,16 @@ const Onboard = () => {
 
       {!isVisible && (
         <Button
-          label={onboard.actions.comeBack}
           onClick={e => {
             e.preventDefault();
             setPage(onboard.pages.first);
             setIsVisible(true);
           }}
-          className="onboard_welcome button"
-        />
+          className="onboard_welcome base-button logo-container"
+        >
+          <span className="onboard-frase">{onboard.actions.comeBack}</span>
+          <span className="logo" />
+        </Button>
       )}
     </React.Fragment>
   );

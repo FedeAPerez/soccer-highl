@@ -7,7 +7,7 @@
     "actions": {
       "next": "Siguiente",
       "back": "Atrás",
-      "comeBack": "I"
+      "comeBack": "¡Quiero conocer!"
     },
     "pages": {
       "max": 3,
@@ -15,7 +15,7 @@
     },
     "introduction": {
       "title": "Bienvenido a Futbolín!",
-      "description": "Futbolín es la nueva forma de enterarte de los últimos partidos.",
+      "description": "Experimentá una nueva forma de descubrir los últimos partidos, con contenidos rápidos para que estés al tanto sin perder tiempo.",
       "altImage": "Imagen de partido de fútbol",
       "image": "soccer.jpg"
     },
